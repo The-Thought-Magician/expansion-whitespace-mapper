@@ -40,10 +40,10 @@ interface Rollups {
 }
 
 const METHODS = [
-  { value: 'price_book', label: 'Price book' },
-  { value: 'peer_median', label: 'Peer median' },
-  { value: 'seat_based', label: 'Seat-based' },
-  { value: 'flat_default', label: 'Flat default' },
+  { value: 'list_price', label: 'Price book' },
+  { value: 'current_arr_uplift', label: 'Peer median' },
+  { value: 'per_seat', label: 'Seat-based' },
+  { value: 'default_expansion', label: 'Flat default' },
 ]
 
 function fmtUsd(cents?: number | null): string {
@@ -104,7 +104,7 @@ export default function SizingPage() {
   const [error, setError] = useState('')
   const [search, setSearch] = useState('')
   const [methodFilter, setMethodFilter] = useState('')
-  const [recomputeMethod, setRecomputeMethod] = useState('price_book')
+  const [recomputeMethod, setRecomputeMethod] = useState('list_price')
   const [computing, setComputing] = useState(false)
   const [computeMsg, setComputeMsg] = useState('')
   const [sortBy, setSortBy] = useState<'arr' | 'confidence'>('arr')

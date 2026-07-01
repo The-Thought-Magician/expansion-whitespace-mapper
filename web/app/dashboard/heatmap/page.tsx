@@ -12,16 +12,16 @@ import { Modal } from '@/components/ui/Modal'
 import { Table, THead, TBody, TR, TH, TD } from '@/components/ui/Table'
 
 type HeatProduct = { id: string; name?: string; sku_code?: string; family?: string | null }
+type HeatSegment = { name: string; total_accounts: number }
 type HeatCell = {
   segment: string
   product_id: string
-  adoption?: number | null
-  owned?: number | null
-  eligible?: number | null
-  total?: number | null
+  total_accounts?: number | null
+  owning_accounts?: number | null
+  adoption_pct?: number | null
 }
 type HeatmapResponse = {
-  segments: string[]
+  segments: HeatSegment[]
   products: HeatProduct[]
   cells: HeatCell[]
 }
@@ -130,11 +130,11 @@ export default function HeatmapPage() {
 
   const summary = useMemo(() => {
     const cells = data?.cells ?? []
-    const known = cells.filter((c) => c.adoption != null)
+    const known = cells.filter((c) => c.adoption_pct != null)
     const avg = known.length
-      ? known.reduce((s, c) => s + adoptionRatio(c.adoption), 0) / known.length
+      ? known.reduce((s, c) => s + adoptionRatio(c.adoption_pct), 0) / known.length
       : 0
-    const cold = cells.filter((c) => adoptionRatio(c.adoption) < 0.2).length
+    const cold = cells.filter((c) => adoptionRatio(c.adoption_pct) < 0.2).length
     return {
       avg: avg * 100,
       cells: cells.length,
@@ -259,27 +259,30 @@ export default function HeatmapPage() {
                     </thead>
                     <tbody>
                       {segments.map((seg) => (
-                        <tr key={seg}>
+                        <tr key={seg.name}>
                           <td className="sticky left-0 z-10 bg-slate-900 px-3 py-2 text-left text-sm font-medium text-slate-200">
-                            {seg}
+                            {seg.name}
+                            <span className="ml-1.5 text-xs font-normal text-slate-500">
+                              ({seg.total_accounts})
+                            </span>
                           </td>
                           {products.map((p) => {
-                            const cell = cellIndex.get(`${seg}|||${p.id}`)
-                            const ratio = adoptionRatio(cell?.adoption)
+                            const cell = cellIndex.get(`${seg.name}|||${p.id}`)
+                            const ratio = adoptionRatio(cell?.adoption_pct)
                             return (
                               <td key={p.id} className="p-0">
                                 <button
-                                  onClick={() => openCell(seg, p)}
+                                  onClick={() => openCell(seg.name, p)}
                                   style={heatStyle(ratio)}
                                   className="flex h-12 w-full min-w-[64px] flex-col items-center justify-center rounded-md border border-slate-800/60 px-2 transition hover:ring-2 hover:ring-purple-400/70"
-                                  title={`${seg} · ${p.name ?? p.sku_code}: ${fmtPct(cell?.adoption)} (${cell?.owned ?? 0}/${cell?.total ?? 0})`}
+                                  title={`${seg.name} · ${p.name ?? p.sku_code}: ${fmtPct(cell?.adoption_pct)} (${cell?.owning_accounts ?? 0}/${cell?.total_accounts ?? 0})`}
                                 >
                                   <span className="text-xs font-semibold">
-                                    {fmtPct(cell?.adoption)}
+                                    {fmtPct(cell?.adoption_pct)}
                                   </span>
-                                  {cell?.total != null && (
+                                  {cell?.total_accounts != null && (
                                     <span className="text-[10px] opacity-70">
-                                      {cell.owned ?? 0}/{cell.total}
+                                      {cell.owning_accounts ?? 0}/{cell.total_accounts}
                                     </span>
                                   )}
                                 </button>

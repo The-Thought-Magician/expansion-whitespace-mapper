@@ -176,6 +176,7 @@ router.get('/', async (c) => {
   const books = Array.from(bookMap.values())
     .map((b) => ({
       ...b,
+      csm_owner: b.csm,
       play_count: playsByOwner.get(b.csm)?.count ?? 0,
       play_open_arr_cents: playsByOwner.get(b.csm)?.open_arr_cents ?? 0,
     }))
