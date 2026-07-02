@@ -158,7 +158,7 @@ export default function LaunchPlannerPage() {
                 <select
                   value={targetProduct}
                   onChange={(e) => setTargetProduct(e.target.value)}
-                  className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-200 focus:border-purple-500 focus:outline-none"
+                  className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-200 focus:border-brand-500 focus:outline-none"
                 >
                   {products.map((p) => (
                     <option key={p.id} value={p.id}>
@@ -172,7 +172,7 @@ export default function LaunchPlannerPage() {
                 <select
                   value={method}
                   onChange={(e) => setMethod(e.target.value)}
-                  className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-200 capitalize focus:border-purple-500 focus:outline-none"
+                  className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-200 capitalize focus:border-brand-500 focus:outline-none"
                 >
                   <option value="default">Default (price book)</option>
                   <option value="seat_based">Seat based</option>
@@ -188,7 +188,7 @@ export default function LaunchPlannerPage() {
                   max={100}
                   value={adoptionAssumption}
                   onChange={(e) => setAdoptionAssumption(e.target.value)}
-                  className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-200 focus:border-purple-500 focus:outline-none"
+                  className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-200 focus:border-brand-500 focus:outline-none"
                 />
               </label>
             </div>
@@ -275,7 +275,7 @@ function BucketBreakdown({ title, buckets, maxArr }: { title: string; buckets: {
                     <TD>
                       <div className="flex items-center gap-2">
                         <div className="h-2 w-28 overflow-hidden rounded-full bg-slate-800">
-                          <div className="h-full bg-purple-500" style={{ width: `${Math.max(2, w)}%` }} />
+                          <div className="h-full bg-brand-500" style={{ width: `${Math.max(2, w)}%` }} />
                         </div>
                         <span className="tabular-nums text-emerald-300">{fmtMoney(arr)}</span>
                       </div>

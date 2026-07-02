@@ -192,7 +192,7 @@ export default function DashboardOverviewPage() {
             <Card className="lg:col-span-2">
               <CardHeader className="flex items-center justify-between">
                 <h2 className="text-sm font-semibold text-white">Top plays</h2>
-                <Link href="/dashboard/plays" className="text-xs text-purple-300 hover:text-purple-200">
+                <Link href="/dashboard/plays" className="text-xs text-brand-300 hover:text-brand-200">
                   View all plays
                 </Link>
               </CardHeader>
@@ -219,7 +219,7 @@ export default function DashboardOverviewPage() {
                               {p.stage ?? 'identified'}
                             </Badge>
                           </TD>
-                          <TD className="text-right font-semibold text-purple-300">
+                          <TD className="text-right font-semibold text-brand-300">
                             {fmtMoney(p.open_arr_cents)}
                           </TD>
                         </TR>
@@ -248,7 +248,7 @@ export default function DashboardOverviewPage() {
                         </div>
                         <div className="h-2 overflow-hidden rounded-full bg-slate-800">
                           <div
-                            className="h-full rounded-full bg-gradient-to-r from-purple-500 to-indigo-500"
+                            className="h-full rounded-full bg-gradient-to-r from-brand-500 to-brand-500"
                             style={{ width: `${pct}%` }}
                           />
                         </div>
@@ -263,7 +263,7 @@ export default function DashboardOverviewPage() {
           <Card>
             <CardHeader className="flex items-center justify-between">
               <h2 className="text-sm font-semibold text-white">Book summary by CSM</h2>
-              <Link href="/dashboard/books" className="text-xs text-purple-300 hover:text-purple-200">
+              <Link href="/dashboard/books" className="text-xs text-brand-300 hover:text-brand-200">
                 Full books view
               </Link>
             </CardHeader>
@@ -290,11 +290,11 @@ export default function DashboardOverviewPage() {
                           <TD className="font-medium text-white">{b.csm_owner || 'Unassigned'}</TD>
                           <TD className="text-right text-slate-300">{b.account_count ?? 0}</TD>
                           <TD className="text-right text-slate-300">{b.play_count ?? 0}</TD>
-                          <TD className="text-right font-semibold text-purple-300">{fmtMoney(arr)}</TD>
+                          <TD className="text-right font-semibold text-brand-300">{fmtMoney(arr)}</TD>
                           <TD>
                             <div className="h-2 w-28 overflow-hidden rounded-full bg-slate-800">
                               <div
-                                className="h-full rounded-full bg-purple-500"
+                                className="h-full rounded-full bg-brand-500"
                                 style={{ width: `${pct}%` }}
                               />
                             </div>

@@ -222,7 +222,7 @@ export default function SnapshotsPage() {
                       <div key={s.id} className="flex flex-1 flex-col items-center gap-1">
                         <div className="flex w-full flex-1 items-end">
                           <div
-                            className="w-full rounded-t bg-gradient-to-t from-purple-700 to-purple-400"
+                            className="w-full rounded-t bg-gradient-to-t from-brand-700 to-brand-400"
                             style={{ height: `${Math.max(3, h)}%` }}
                             title={`${s.label ?? s.id}: ${fmtArr(s.total_open_arr_cents)}`}
                           />
@@ -250,7 +250,7 @@ export default function SnapshotsPage() {
                   <select
                     value={aId}
                     onChange={(e) => setAId(e.target.value)}
-                    className="w-56 rounded-lg border border-slate-700 bg-slate-950 px-3 py-1.5 text-sm text-slate-200 focus:border-purple-500 focus:outline-none"
+                    className="w-56 rounded-lg border border-slate-700 bg-slate-950 px-3 py-1.5 text-sm text-slate-200 focus:border-brand-500 focus:outline-none"
                   >
                     <option value="">Select baseline…</option>
                     {list.map((s) => (
@@ -265,7 +265,7 @@ export default function SnapshotsPage() {
                   <select
                     value={bId}
                     onChange={(e) => setBId(e.target.value)}
-                    className="w-56 rounded-lg border border-slate-700 bg-slate-950 px-3 py-1.5 text-sm text-slate-200 focus:border-purple-500 focus:outline-none"
+                    className="w-56 rounded-lg border border-slate-700 bg-slate-950 px-3 py-1.5 text-sm text-slate-200 focus:border-brand-500 focus:outline-none"
                   >
                     <option value="">Select current…</option>
                     {list.map((s) => (
@@ -323,7 +323,7 @@ export default function SnapshotsPage() {
                     <TR key={s.id}>
                       <TD className="font-medium text-white">{s.label || `Snapshot ${s.id.slice(0, 8)}`}</TD>
                       <TD className="text-slate-400">{fmtDate(s.created_at)}</TD>
-                      <TD className="text-right tabular-nums text-purple-300">
+                      <TD className="text-right tabular-nums text-brand-300">
                         {fmtArr(s.total_open_arr_cents)}
                       </TD>
                       <TD className="text-right tabular-nums">{fmtArr(s.total_owned_arr_cents)}</TD>
@@ -374,7 +374,7 @@ export default function SnapshotsPage() {
               onChange={(e) => setLabel(e.target.value)}
               placeholder="e.g. Q2 baseline"
               autoFocus
-              className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-200 placeholder:text-slate-600 focus:border-purple-500 focus:outline-none"
+              className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-200 placeholder:text-slate-600 focus:border-brand-500 focus:outline-none"
             />
             <span className="mt-1 block text-xs text-slate-500">
               Optional. A default label is generated if left blank.

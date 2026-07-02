@@ -10,7 +10,7 @@ interface StatProps {
 
 const valueTones = {
   default: 'text-white',
-  purple: 'text-purple-300',
+  purple: 'text-brand-300',
   green: 'text-emerald-300',
   amber: 'text-amber-300',
 }

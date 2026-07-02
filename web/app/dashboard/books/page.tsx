@@ -185,7 +185,7 @@ export default function BooksPage() {
                         <span
                           className={`flex h-7 w-7 flex-none items-center justify-center rounded-full text-xs font-bold ${
                             i === 0
-                              ? 'bg-purple-500/25 text-purple-200'
+                              ? 'bg-brand-500/25 text-brand-200'
                               : 'bg-slate-800 text-slate-400'
                           }`}
                         >
@@ -207,7 +207,7 @@ export default function BooksPage() {
                           </div>
                           <div className="mt-1 h-2 w-full overflow-hidden rounded-full bg-slate-800">
                             <div
-                              className="h-full rounded-full bg-gradient-to-r from-purple-600 to-purple-400"
+                              className="h-full rounded-full bg-gradient-to-r from-brand-600 to-brand-400"
                               style={{ width: `${Math.max(2, ratio * 100).toFixed(1)}%` }}
                             />
                           </div>
@@ -230,12 +230,12 @@ export default function BooksPage() {
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}
                     placeholder="Search CSM..."
-                    className="w-44 rounded-lg border border-slate-700 bg-slate-950 px-3 py-1.5 text-sm text-slate-200 placeholder:text-slate-600 focus:border-purple-500 focus:outline-none"
+                    className="w-44 rounded-lg border border-slate-700 bg-slate-950 px-3 py-1.5 text-sm text-slate-200 placeholder:text-slate-600 focus:border-brand-500 focus:outline-none"
                   />
                   <select
                     value={sortKey}
                     onChange={(e) => setSortKey(e.target.value as SortKey)}
-                    className="rounded-lg border border-slate-700 bg-slate-950 px-3 py-1.5 text-sm text-slate-200 focus:border-purple-500 focus:outline-none"
+                    className="rounded-lg border border-slate-700 bg-slate-950 px-3 py-1.5 text-sm text-slate-200 focus:border-brand-500 focus:outline-none"
                   >
                     <option value="open">Sort: Open ARR</option>
                     <option value="accounts">Sort: Accounts</option>
@@ -273,7 +273,7 @@ export default function BooksPage() {
                       <TR key={`${csmName(r)}-${i}`}>
                         <TD className="font-medium text-white">{csmName(r)}</TD>
                         <TD className="text-right tabular-nums">{accountsOf(r)}</TD>
-                        <TD className="text-right tabular-nums text-purple-300">
+                        <TD className="text-right tabular-nums text-brand-300">
                           {fmtArr(r.open_arr_cents)}
                         </TD>
                         <TD className="text-right tabular-nums">{fmtArr(r.owned_arr_cents)}</TD>

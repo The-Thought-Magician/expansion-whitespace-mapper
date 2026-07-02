@@ -219,7 +219,7 @@ export default function LookalikesPage() {
       </div>
 
       {computeMsg && (
-        <div className="rounded-lg border border-purple-500/30 bg-purple-500/10 px-4 py-3 text-sm text-purple-200">
+        <div className="rounded-lg border border-brand-500/30 bg-brand-500/10 px-4 py-3 text-sm text-brand-200">
           {computeMsg}
         </div>
       )}
@@ -241,12 +241,12 @@ export default function LookalikesPage() {
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search account, product, reason..."
-              className="w-full max-w-xs rounded-lg border border-slate-700 bg-slate-800 px-3 py-2 text-sm text-white placeholder-slate-500 focus:border-purple-500 focus:outline-none"
+              className="w-full max-w-xs rounded-lg border border-slate-700 bg-slate-800 px-3 py-2 text-sm text-white placeholder-slate-500 focus:border-brand-500 focus:outline-none"
             />
             <select
               value={segmentFilter}
               onChange={(e) => setSegmentFilter(e.target.value)}
-              className="rounded-lg border border-slate-700 bg-slate-800 px-3 py-2 text-sm text-white focus:border-purple-500 focus:outline-none"
+              className="rounded-lg border border-slate-700 bg-slate-800 px-3 py-2 text-sm text-white focus:border-brand-500 focus:outline-none"
             >
               <option value="">All segments</option>
               {segments.map((s) => (
@@ -258,7 +258,7 @@ export default function LookalikesPage() {
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value as typeof sortBy)}
-              className="rounded-lg border border-slate-700 bg-slate-800 px-3 py-2 text-sm text-white focus:border-purple-500 focus:outline-none"
+              className="rounded-lg border border-slate-700 bg-slate-800 px-3 py-2 text-sm text-white focus:border-brand-500 focus:outline-none"
             >
               <option value="score">Sort by score</option>
               <option value="arr">Sort by ARR</option>
@@ -275,7 +275,7 @@ export default function LookalikesPage() {
                 step={5}
                 value={minAdoption}
                 onChange={(e) => setMinAdoption(Number(e.target.value))}
-                className="accent-purple-500"
+                className="accent-brand-500"
               />
             </label>
             <label className="flex items-center gap-2 text-xs text-slate-400">
@@ -286,7 +286,7 @@ export default function LookalikesPage() {
                 step={1000}
                 value={minArr}
                 onChange={(e) => setMinArr(Number(e.target.value))}
-                className="w-28 rounded-lg border border-slate-700 bg-slate-800 px-2 py-1 text-sm text-white focus:border-purple-500 focus:outline-none"
+                className="w-28 rounded-lg border border-slate-700 bg-slate-800 px-2 py-1 text-sm text-white focus:border-brand-500 focus:outline-none"
               />
             </label>
             <span className="text-xs text-slate-500 sm:ml-auto">{filtered.length} shown</span>
@@ -322,7 +322,7 @@ export default function LookalikesPage() {
                       type="checkbox"
                       checked={selected.size === filtered.length && filtered.length > 0}
                       onChange={toggleAll}
-                      className="h-4 w-4 rounded border-slate-700 bg-slate-800 text-purple-600"
+                      className="h-4 w-4 rounded border-slate-700 bg-slate-800 text-brand-600"
                       aria-label="Select all"
                     />
                   </TH>
@@ -344,7 +344,7 @@ export default function LookalikesPage() {
                         type="checkbox"
                         checked={selected.has(s.id)}
                         onChange={() => toggle(s.id)}
-                        className="h-4 w-4 rounded border-slate-700 bg-slate-800 text-purple-600"
+                        className="h-4 w-4 rounded border-slate-700 bg-slate-800 text-brand-600"
                         aria-label={`Select ${s.account_name ?? s.id}`}
                       />
                     </TD>
@@ -355,7 +355,7 @@ export default function LookalikesPage() {
                       <div className="flex items-center justify-end gap-2">
                         <div className="hidden h-1.5 w-16 overflow-hidden rounded-full bg-slate-800 sm:block">
                           <div
-                            className="h-full rounded-full bg-purple-500"
+                            className="h-full rounded-full bg-brand-500"
                             style={{ width: `${Math.min(100, (s.adoption_rate ?? 0) * 100)}%` }}
                           />
                         </div>
@@ -428,7 +428,7 @@ export default function LookalikesPage() {
               <select
                 value={playForm.play_type}
                 onChange={(e) => setPlayForm({ ...playForm, play_type: e.target.value })}
-                className="w-full rounded-lg border border-slate-700 bg-slate-800 px-3 py-2 text-sm text-white focus:border-purple-500 focus:outline-none"
+                className="w-full rounded-lg border border-slate-700 bg-slate-800 px-3 py-2 text-sm text-white focus:border-brand-500 focus:outline-none"
               >
                 <option value="cross_sell">Cross-sell</option>
                 <option value="upsell">Upsell</option>
@@ -441,7 +441,7 @@ export default function LookalikesPage() {
               <select
                 value={playForm.stage}
                 onChange={(e) => setPlayForm({ ...playForm, stage: e.target.value })}
-                className="w-full rounded-lg border border-slate-700 bg-slate-800 px-3 py-2 text-sm text-white focus:border-purple-500 focus:outline-none"
+                className="w-full rounded-lg border border-slate-700 bg-slate-800 px-3 py-2 text-sm text-white focus:border-brand-500 focus:outline-none"
               >
                 {PLAY_STAGES.map((s) => (
                   <option key={s} value={s}>
@@ -456,7 +456,7 @@ export default function LookalikesPage() {
                 value={playForm.owner}
                 onChange={(e) => setPlayForm({ ...playForm, owner: e.target.value })}
                 placeholder="CSM / AE name"
-                className="w-full rounded-lg border border-slate-700 bg-slate-800 px-3 py-2 text-sm text-white focus:border-purple-500 focus:outline-none"
+                className="w-full rounded-lg border border-slate-700 bg-slate-800 px-3 py-2 text-sm text-white focus:border-brand-500 focus:outline-none"
               />
             </div>
             <div className="sm:col-span-2">
@@ -466,7 +466,7 @@ export default function LookalikesPage() {
                 onChange={(e) => setPlayForm({ ...playForm, notes: e.target.value })}
                 rows={2}
                 placeholder="Defaults to the look-alike explanation"
-                className="w-full rounded-lg border border-slate-700 bg-slate-800 px-3 py-2 text-sm text-white focus:border-purple-500 focus:outline-none"
+                className="w-full rounded-lg border border-slate-700 bg-slate-800 px-3 py-2 text-sm text-white focus:border-brand-500 focus:outline-none"
               />
             </div>
           </div>

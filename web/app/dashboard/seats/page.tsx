@@ -218,7 +218,7 @@ export default function SeatsPage() {
             key={t}
             onClick={() => setTab(t)}
             className={`border-b-2 px-4 py-2 text-sm font-medium transition-colors ${
-              tab === t ? 'border-purple-500 text-white' : 'border-transparent text-slate-400 hover:text-slate-200'
+              tab === t ? 'border-brand-500 text-white' : 'border-transparent text-slate-400 hover:text-slate-200'
             }`}
           >
             {t === 'penetration' ? `Penetration tracker (${enriched.length})` : `Overage upsell (${overage.length})`}
@@ -234,7 +234,7 @@ export default function SeatsPage() {
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 placeholder="Search account or product…"
-                className="w-60 rounded-lg border border-slate-700 bg-slate-950 px-3 py-1.5 text-sm text-slate-200 placeholder:text-slate-600 focus:border-purple-500 focus:outline-none"
+                className="w-60 rounded-lg border border-slate-700 bg-slate-950 px-3 py-1.5 text-sm text-slate-200 placeholder:text-slate-600 focus:border-brand-500 focus:outline-none"
               />
               <div className="flex gap-1">
                 {([
@@ -247,7 +247,7 @@ export default function SeatsPage() {
                     key={v}
                     onClick={() => setPenFilter(v)}
                     className={`rounded-lg px-2.5 py-1.5 text-xs font-medium ${
-                      penFilter === v ? 'bg-purple-600 text-white' : 'bg-slate-800 text-slate-400 hover:text-slate-200'
+                      penFilter === v ? 'bg-brand-600 text-white' : 'bg-slate-800 text-slate-400 hover:text-slate-200'
                     }`}
                   >
                     {l}
@@ -399,14 +399,14 @@ export default function SeatsPage() {
         <div className="space-y-3">
           <p className="text-sm text-slate-400">
             Paste CSV with a header row. Expected columns:{' '}
-            <code className="rounded bg-slate-800 px-1 text-purple-300">account_id, product_id, licensed_seats, active_seats, assigned_seats</code>
+            <code className="rounded bg-slate-800 px-1 text-brand-300">account_id, product_id, licensed_seats, active_seats, assigned_seats</code>
           </p>
           <textarea
             value={importText}
             onChange={(e) => setImportText(e.target.value)}
             rows={8}
             placeholder={'account_id,product_id,licensed_seats,active_seats,assigned_seats\nacc-1,prod-1,100,72,80'}
-            className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 font-mono text-xs text-slate-200 placeholder:text-slate-600 focus:border-purple-500 focus:outline-none"
+            className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 font-mono text-xs text-slate-200 placeholder:text-slate-600 focus:border-brand-500 focus:outline-none"
           />
           {importError && <p className="rounded-lg bg-red-500/10 px-3 py-2 text-sm text-red-300">{importError}</p>}
           {importResult && (
@@ -441,7 +441,7 @@ function Field({
         value={value}
         required={required}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-200 focus:border-purple-500 focus:outline-none"
+        className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-200 focus:border-brand-500 focus:outline-none"
       />
     </label>
   )

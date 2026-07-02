@@ -220,7 +220,7 @@ export default function NotificationsPage() {
             key={t}
             onClick={() => setTab(t)}
             className={`border-b-2 px-4 py-2 text-sm font-medium transition-colors ${
-              tab === t ? 'border-purple-500 text-white' : 'border-transparent text-slate-400 hover:text-slate-200'
+              tab === t ? 'border-brand-500 text-white' : 'border-transparent text-slate-400 hover:text-slate-200'
             }`}
           >
             {t === 'feed' ? `Feed (${notifications.length})` : `Trigger rules (${triggers.length})`}
@@ -240,7 +240,7 @@ export default function NotificationsPage() {
                   key={v}
                   onClick={() => setFeedFilter(v)}
                   className={`rounded-lg px-2.5 py-1.5 text-xs font-medium ${
-                    feedFilter === v ? 'bg-purple-600 text-white' : 'bg-slate-800 text-slate-400 hover:text-slate-200'
+                    feedFilter === v ? 'bg-brand-600 text-white' : 'bg-slate-800 text-slate-400 hover:text-slate-200'
                   }`}
                 >
                   {l}
@@ -263,9 +263,9 @@ export default function NotificationsPage() {
                 {visibleFeed.map((n) => (
                   <li
                     key={n.id}
-                    className={`flex items-start gap-3 px-5 py-4 ${n.is_read ? '' : 'bg-purple-500/5'}`}
+                    className={`flex items-start gap-3 px-5 py-4 ${n.is_read ? '' : 'bg-brand-500/5'}`}
                   >
-                    <span className={`mt-1.5 h-2 w-2 shrink-0 rounded-full ${n.is_read ? 'bg-slate-700' : 'bg-purple-500'}`} />
+                    <span className={`mt-1.5 h-2 w-2 shrink-0 rounded-full ${n.is_read ? 'bg-slate-700' : 'bg-brand-500'}`} />
                     <div className="min-w-0 flex-1">
                       <div className="flex flex-wrap items-center gap-2">
                         <span className="font-medium text-white">{n.title}</span>
@@ -274,7 +274,7 @@ export default function NotificationsPage() {
                       </div>
                       {n.body && <p className="mt-1 text-sm text-slate-400">{n.body}</p>}
                       {n.link && (
-                        <a href={n.link} className="mt-1 inline-block text-xs font-medium text-purple-400 hover:text-purple-300">
+                        <a href={n.link} className="mt-1 inline-block text-xs font-medium text-brand-400 hover:text-brand-300">
                           View detail →
                         </a>
                       )}
@@ -317,7 +317,7 @@ export default function NotificationsPage() {
                         </div>
                         <p className="mt-1 text-sm text-slate-400">{label}</p>
                         {condStr && (
-                          <code className="mt-1 inline-block rounded bg-slate-800 px-1.5 py-0.5 text-xs text-purple-300">{condStr}</code>
+                          <code className="mt-1 inline-block rounded bg-slate-800 px-1.5 py-0.5 text-xs text-brand-300">{condStr}</code>
                         )}
                       </div>
                       <Button size="sm" variant="danger" onClick={() => removeTrigger(t.id)}>Delete</Button>
@@ -350,7 +350,7 @@ export default function NotificationsPage() {
               required
               onChange={(e) => setForm({ ...form, name: e.target.value })}
               placeholder="High-value whitespace alert"
-              className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-200 placeholder:text-slate-600 focus:border-purple-500 focus:outline-none"
+              className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-200 placeholder:text-slate-600 focus:border-brand-500 focus:outline-none"
             />
           </label>
           <label className="block">
@@ -358,7 +358,7 @@ export default function NotificationsPage() {
             <select
               value={form.event_type}
               onChange={(e) => setForm({ ...form, event_type: e.target.value })}
-              className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-200 focus:border-purple-500 focus:outline-none"
+              className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-200 focus:border-brand-500 focus:outline-none"
             >
               {EVENT_TYPES.map((e) => (
                 <option key={e.value} value={e.value}>{e.label}</option>
@@ -372,7 +372,7 @@ export default function NotificationsPage() {
               onChange={(e) => setForm({ ...form, conditions: e.target.value })}
               rows={4}
               placeholder={'{"min_arr_cents": 1000000}'}
-              className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 font-mono text-xs text-slate-200 placeholder:text-slate-600 focus:border-purple-500 focus:outline-none"
+              className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 font-mono text-xs text-slate-200 placeholder:text-slate-600 focus:border-brand-500 focus:outline-none"
             />
             <span className="mt-1 block text-xs text-slate-500">Leave empty to fire on every matching event.</span>
           </label>

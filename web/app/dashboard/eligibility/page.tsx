@@ -322,7 +322,7 @@ export default function EligibilityPage() {
       </div>
 
       {applyMsg && (
-        <div className="rounded-lg border border-purple-500/30 bg-purple-500/10 px-4 py-3 text-sm text-purple-200">
+        <div className="rounded-lg border border-brand-500/30 bg-brand-500/10 px-4 py-3 text-sm text-brand-200">
           {applyMsg}
         </div>
       )}
@@ -344,12 +344,12 @@ export default function EligibilityPage() {
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search rules..."
-              className="w-full max-w-xs rounded-lg border border-slate-700 bg-slate-800 px-3 py-2 text-sm text-white placeholder-slate-500 focus:border-purple-500 focus:outline-none"
+              className="w-full max-w-xs rounded-lg border border-slate-700 bg-slate-800 px-3 py-2 text-sm text-white placeholder-slate-500 focus:border-brand-500 focus:outline-none"
             />
             <select
               value={statusFilter}
               onChange={(e) => setStatusFilter(e.target.value as typeof statusFilter)}
-              className="rounded-lg border border-slate-700 bg-slate-800 px-3 py-2 text-sm text-white focus:border-purple-500 focus:outline-none"
+              className="rounded-lg border border-slate-700 bg-slate-800 px-3 py-2 text-sm text-white focus:border-brand-500 focus:outline-none"
             >
               <option value="all">All statuses</option>
               <option value="active">Active</option>
@@ -488,7 +488,7 @@ export default function EligibilityPage() {
               <input
                 value={form.name}
                 onChange={(e) => setForm({ ...form, name: e.target.value })}
-                className="w-full rounded-lg border border-slate-700 bg-slate-800 px-3 py-2 text-sm text-white focus:border-purple-500 focus:outline-none"
+                className="w-full rounded-lg border border-slate-700 bg-slate-800 px-3 py-2 text-sm text-white focus:border-brand-500 focus:outline-none"
                 placeholder="Enterprise eligible for Analytics add-on"
               />
             </div>
@@ -498,7 +498,7 @@ export default function EligibilityPage() {
                 value={form.description}
                 onChange={(e) => setForm({ ...form, description: e.target.value })}
                 rows={2}
-                className="w-full rounded-lg border border-slate-700 bg-slate-800 px-3 py-2 text-sm text-white focus:border-purple-500 focus:outline-none"
+                className="w-full rounded-lg border border-slate-700 bg-slate-800 px-3 py-2 text-sm text-white focus:border-brand-500 focus:outline-none"
               />
             </div>
             <div>
@@ -506,7 +506,7 @@ export default function EligibilityPage() {
               <select
                 value={form.target_product_id}
                 onChange={(e) => setForm({ ...form, target_product_id: e.target.value })}
-                className="w-full rounded-lg border border-slate-700 bg-slate-800 px-3 py-2 text-sm text-white focus:border-purple-500 focus:outline-none"
+                className="w-full rounded-lg border border-slate-700 bg-slate-800 px-3 py-2 text-sm text-white focus:border-brand-500 focus:outline-none"
               >
                 <option value="">Any product</option>
                 {products.map((p) => (
@@ -522,7 +522,7 @@ export default function EligibilityPage() {
                 type="number"
                 value={form.priority}
                 onChange={(e) => setForm({ ...form, priority: Number(e.target.value) })}
-                className="w-full rounded-lg border border-slate-700 bg-slate-800 px-3 py-2 text-sm text-white focus:border-purple-500 focus:outline-none"
+                className="w-full rounded-lg border border-slate-700 bg-slate-800 px-3 py-2 text-sm text-white focus:border-brand-500 focus:outline-none"
               />
             </div>
             <div>
@@ -530,7 +530,7 @@ export default function EligibilityPage() {
               <select
                 value={form.action}
                 onChange={(e) => setForm({ ...form, action: e.target.value })}
-                className="w-full rounded-lg border border-slate-700 bg-slate-800 px-3 py-2 text-sm text-white focus:border-purple-500 focus:outline-none"
+                className="w-full rounded-lg border border-slate-700 bg-slate-800 px-3 py-2 text-sm text-white focus:border-brand-500 focus:outline-none"
               >
                 {ACTION_OPTIONS.map((a) => (
                   <option key={a} value={a}>
@@ -544,7 +544,7 @@ export default function EligibilityPage() {
               <select
                 value={form.mode}
                 onChange={(e) => setForm({ ...form, mode: e.target.value })}
-                className="w-full rounded-lg border border-slate-700 bg-slate-800 px-3 py-2 text-sm text-white focus:border-purple-500 focus:outline-none"
+                className="w-full rounded-lg border border-slate-700 bg-slate-800 px-3 py-2 text-sm text-white focus:border-brand-500 focus:outline-none"
               >
                 {MODE_OPTIONS.map((m) => (
                   <option key={m} value={m}>
@@ -560,7 +560,7 @@ export default function EligibilityPage() {
               <label className="text-xs font-medium text-slate-400">Conditions (account attributes)</label>
               <button
                 onClick={() => setForm((f) => ({ ...f, conditions: [...f.conditions, emptyCondition()] }))}
-                className="text-xs font-medium text-purple-400 hover:text-purple-300"
+                className="text-xs font-medium text-brand-400 hover:text-brand-300"
               >
                 + Add condition
               </button>
@@ -571,7 +571,7 @@ export default function EligibilityPage() {
                   <select
                     value={c.field}
                     onChange={(e) => updateCondition(i, { field: e.target.value })}
-                    className="rounded-lg border border-slate-700 bg-slate-800 px-2 py-1.5 text-xs text-white focus:border-purple-500 focus:outline-none"
+                    className="rounded-lg border border-slate-700 bg-slate-800 px-2 py-1.5 text-xs text-white focus:border-brand-500 focus:outline-none"
                   >
                     {FIELD_OPTIONS.map((f) => (
                       <option key={f} value={f}>
@@ -582,7 +582,7 @@ export default function EligibilityPage() {
                   <select
                     value={c.op}
                     onChange={(e) => updateCondition(i, { op: e.target.value })}
-                    className="rounded-lg border border-slate-700 bg-slate-800 px-2 py-1.5 text-xs text-white focus:border-purple-500 focus:outline-none"
+                    className="rounded-lg border border-slate-700 bg-slate-800 px-2 py-1.5 text-xs text-white focus:border-brand-500 focus:outline-none"
                   >
                     {OP_OPTIONS.map((o) => (
                       <option key={o} value={o}>
@@ -594,7 +594,7 @@ export default function EligibilityPage() {
                     value={c.value}
                     onChange={(e) => updateCondition(i, { value: e.target.value })}
                     placeholder="value"
-                    className="flex-1 rounded-lg border border-slate-700 bg-slate-800 px-2 py-1.5 text-xs text-white focus:border-purple-500 focus:outline-none"
+                    className="flex-1 rounded-lg border border-slate-700 bg-slate-800 px-2 py-1.5 text-xs text-white focus:border-brand-500 focus:outline-none"
                   />
                   <button
                     onClick={() =>
@@ -618,7 +618,7 @@ export default function EligibilityPage() {
               type="checkbox"
               checked={form.is_active}
               onChange={(e) => setForm({ ...form, is_active: e.target.checked })}
-              className="h-4 w-4 rounded border-slate-700 bg-slate-800 text-purple-600"
+              className="h-4 w-4 rounded border-slate-700 bg-slate-800 text-brand-600"
             />
             Active
           </label>
@@ -647,8 +647,8 @@ export default function EligibilityPage() {
           </div>
         ) : previewResult ? (
           <div className="space-y-4">
-            <div className="rounded-lg border border-purple-500/30 bg-purple-500/10 px-4 py-3">
-              <div className="text-xs uppercase tracking-wide text-purple-300">Affected cells</div>
+            <div className="rounded-lg border border-brand-500/30 bg-brand-500/10 px-4 py-3">
+              <div className="text-xs uppercase tracking-wide text-brand-300">Affected cells</div>
               <div className="mt-1 text-2xl font-bold text-white">{previewResult.affected ?? 0}</div>
               <div className="mt-1 text-xs text-slate-400">
                 Accounts × products this rule would change if applied. No data is written.

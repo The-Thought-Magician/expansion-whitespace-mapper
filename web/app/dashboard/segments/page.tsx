@@ -221,7 +221,7 @@ export default function SegmentsPage() {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Search segments…"
-            className="w-64 rounded-lg border border-slate-700 bg-slate-950 px-3 py-1.5 text-sm text-slate-200 placeholder:text-slate-600 focus:border-purple-500 focus:outline-none"
+            className="w-64 rounded-lg border border-slate-700 bg-slate-950 px-3 py-1.5 text-sm text-slate-200 placeholder:text-slate-600 focus:border-brand-500 focus:outline-none"
           />
           <span className="text-xs text-slate-500">{filtered.length} of {segments.length} shown</span>
         </CardHeader>
@@ -298,10 +298,10 @@ export default function SegmentsPage() {
               value={form.rules}
               onChange={(e) => setForm({ ...form, rules: e.target.value })}
               rows={7}
-              className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 font-mono text-xs text-slate-200 focus:border-purple-500 focus:outline-none"
+              className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 font-mono text-xs text-slate-200 focus:border-brand-500 focus:outline-none"
             />
             <span className="mt-1 block text-xs text-slate-500">
-              Match accounts by attribute, e.g. <code className="rounded bg-slate-800 px-1 text-purple-300">{'{"segment":"Enterprise","region":"NA"}'}</code>
+              Match accounts by attribute, e.g. <code className="rounded bg-slate-800 px-1 text-brand-300">{'{"segment":"Enterprise","region":"NA"}'}</code>
             </span>
           </label>
         </form>
@@ -402,7 +402,7 @@ function Field({
         value={value}
         required={required}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-200 focus:border-purple-500 focus:outline-none"
+        className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-200 focus:border-brand-500 focus:outline-none"
       />
     </label>
   )

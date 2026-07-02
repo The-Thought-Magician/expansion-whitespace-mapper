@@ -219,7 +219,7 @@ export default function AnalyticsPage() {
                     key={v}
                     onClick={() => setDim(v)}
                     className={`rounded-lg px-2.5 py-1.5 text-xs font-medium ${
-                      dim === v ? 'bg-purple-600 text-white' : 'bg-slate-800 text-slate-400 hover:text-slate-200'
+                      dim === v ? 'bg-brand-600 text-white' : 'bg-slate-800 text-slate-400 hover:text-slate-200'
                     }`}
                   >
                     {l}
@@ -239,7 +239,7 @@ export default function AnalyticsPage() {
                       value={b.count}
                       max={maxCount}
                       money={b.arr}
-                      tone={dim === 'stage' ? barTone(b.label) : 'bg-purple-600'}
+                      tone={dim === 'stage' ? barTone(b.label) : 'bg-brand-600'}
                     />
                   ))}
                 </div>
@@ -374,7 +374,7 @@ function barTone(stage: string): string {
     case 'red': return 'bg-red-600'
     case 'amber': return 'bg-amber-600'
     case 'blue': return 'bg-sky-600'
-    case 'purple': return 'bg-purple-600'
+    case 'purple': return 'bg-brand-600'
     default: return 'bg-slate-600'
   }
 }

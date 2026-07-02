@@ -32,7 +32,7 @@ export default function SignUp() {
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
           <Link href="/" className="inline-flex items-center gap-2">
-            <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-purple-500 to-indigo-600 text-base font-black text-white">
+            <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-brand-500 to-brand-600 text-base font-black text-white">
               E
             </span>
             <span className="text-xl font-bold text-white">ExpansionWhitespaceMapper</span>
@@ -49,7 +49,7 @@ export default function SignUp() {
               name="name"
               type="text"
               required
-              className="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-purple-500"
+              className="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-brand-500"
               placeholder="Your name"
             />
           </div>
@@ -59,7 +59,7 @@ export default function SignUp() {
               name="email"
               type="email"
               required
-              className="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-purple-500"
+              className="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-brand-500"
               placeholder="you@example.com"
             />
           </div>
@@ -70,19 +70,19 @@ export default function SignUp() {
               type="password"
               required
               minLength={8}
-              className="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500"
+              className="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand-500"
             />
           </div>
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-purple-600 hover:bg-purple-500 disabled:opacity-50 text-white py-3 rounded-lg font-semibold transition-colors"
+            className="w-full bg-brand-600 hover:bg-brand-500 disabled:opacity-50 text-white py-3 rounded-lg font-semibold transition-colors"
           >
             {loading ? 'Creating account...' : 'Create Account'}
           </button>
           <p className="text-center text-slate-400 text-sm">
             Already have an account?{' '}
-            <Link href="/auth/sign-in" className="text-purple-400 hover:text-purple-300">
+            <Link href="/auth/sign-in" className="text-brand-400 hover:text-brand-300">
               Sign in
             </Link>
           </p>

@@ -87,7 +87,7 @@ function BarList({ items }: { items: RollupBucket[] }) {
           </div>
           <div className="h-2 w-full overflow-hidden rounded-full bg-slate-800">
             <div
-              className="h-full rounded-full bg-gradient-to-r from-purple-500 to-indigo-500"
+              className="h-full rounded-full bg-gradient-to-r from-brand-500 to-brand-500"
               style={{ width: `${(bucketArr(b) / max) * 100}%` }}
             />
           </div>
@@ -200,7 +200,7 @@ export default function SizingPage() {
           <select
             value={recomputeMethod}
             onChange={(e) => setRecomputeMethod(e.target.value)}
-            className="rounded-lg border border-slate-700 bg-slate-800 px-3 py-2 text-sm text-white focus:border-purple-500 focus:outline-none"
+            className="rounded-lg border border-slate-700 bg-slate-800 px-3 py-2 text-sm text-white focus:border-brand-500 focus:outline-none"
           >
             {METHODS.map((m) => (
               <option key={m.value} value={m.value}>
@@ -215,7 +215,7 @@ export default function SizingPage() {
       </div>
 
       {computeMsg && (
-        <div className="rounded-lg border border-purple-500/30 bg-purple-500/10 px-4 py-3 text-sm text-purple-200">
+        <div className="rounded-lg border border-brand-500/30 bg-brand-500/10 px-4 py-3 text-sm text-brand-200">
           {computeMsg}
         </div>
       )}
@@ -290,12 +290,12 @@ export default function SizingPage() {
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search account or product..."
-              className="w-full max-w-xs rounded-lg border border-slate-700 bg-slate-800 px-3 py-2 text-sm text-white placeholder-slate-500 focus:border-purple-500 focus:outline-none"
+              className="w-full max-w-xs rounded-lg border border-slate-700 bg-slate-800 px-3 py-2 text-sm text-white placeholder-slate-500 focus:border-brand-500 focus:outline-none"
             />
             <select
               value={methodFilter}
               onChange={(e) => setMethodFilter(e.target.value)}
-              className="rounded-lg border border-slate-700 bg-slate-800 px-3 py-2 text-sm text-white focus:border-purple-500 focus:outline-none"
+              className="rounded-lg border border-slate-700 bg-slate-800 px-3 py-2 text-sm text-white focus:border-brand-500 focus:outline-none"
             >
               <option value="">All methods</option>
               {METHODS.map((m) => (
@@ -307,7 +307,7 @@ export default function SizingPage() {
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value as typeof sortBy)}
-              className="rounded-lg border border-slate-700 bg-slate-800 px-3 py-2 text-sm text-white focus:border-purple-500 focus:outline-none"
+              className="rounded-lg border border-slate-700 bg-slate-800 px-3 py-2 text-sm text-white focus:border-brand-500 focus:outline-none"
             >
               <option value="arr">Sort by ARR</option>
               <option value="confidence">Sort by confidence</option>

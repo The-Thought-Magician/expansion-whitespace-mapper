@@ -213,12 +213,12 @@ export default function HeatmapPage() {
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}
                     placeholder="Search products..."
-                    className="w-44 rounded-lg border border-slate-700 bg-slate-950 px-3 py-1.5 text-sm text-slate-200 placeholder:text-slate-600 focus:border-purple-500 focus:outline-none"
+                    className="w-44 rounded-lg border border-slate-700 bg-slate-950 px-3 py-1.5 text-sm text-slate-200 placeholder:text-slate-600 focus:border-brand-500 focus:outline-none"
                   />
                   <select
                     value={familyFilter}
                     onChange={(e) => setFamilyFilter(e.target.value)}
-                    className="rounded-lg border border-slate-700 bg-slate-950 px-3 py-1.5 text-sm text-slate-200 focus:border-purple-500 focus:outline-none"
+                    className="rounded-lg border border-slate-700 bg-slate-950 px-3 py-1.5 text-sm text-slate-200 focus:border-brand-500 focus:outline-none"
                   >
                     <option value="all">All families</option>
                     {families.map((f) => (
@@ -274,7 +274,7 @@ export default function HeatmapPage() {
                                 <button
                                   onClick={() => openCell(seg.name, p)}
                                   style={heatStyle(ratio)}
-                                  className="flex h-12 w-full min-w-[64px] flex-col items-center justify-center rounded-md border border-slate-800/60 px-2 transition hover:ring-2 hover:ring-purple-400/70"
+                                  className="flex h-12 w-full min-w-[64px] flex-col items-center justify-center rounded-md border border-slate-800/60 px-2 transition hover:ring-2 hover:ring-brand-400/70"
                                   title={`${seg.name} · ${p.name ?? p.sku_code}: ${fmtPct(cell?.adoption_pct)} (${cell?.owning_accounts ?? 0}/${cell?.total_accounts ?? 0})`}
                                 >
                                   <span className="text-xs font-semibold">

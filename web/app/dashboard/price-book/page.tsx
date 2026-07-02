@@ -67,7 +67,7 @@ function fmtMoney(cents?: number | null, currency = 'USD'): string {
 }
 
 const inputCls =
-  'w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-100 outline-none focus:border-purple-500'
+  'w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-100 outline-none focus:border-brand-500'
 
 export default function PriceBookPage() {
   const [entries, setEntries] = useState<PriceEntry[]>([])
@@ -249,7 +249,7 @@ export default function PriceBookPage() {
           <div className="flex flex-wrap items-center gap-2">
             <input
               placeholder="Search…"
-              className="w-44 rounded-lg border border-slate-700 bg-slate-950 px-3 py-1.5 text-sm text-slate-100 outline-none focus:border-purple-500"
+              className="w-44 rounded-lg border border-slate-700 bg-slate-950 px-3 py-1.5 text-sm text-slate-100 outline-none focus:border-brand-500"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
             />
@@ -303,7 +303,7 @@ export default function PriceBookPage() {
                       <td className="px-4 py-3">{e.segment ? <Badge tone="blue">{e.segment}</Badge> : <span className="text-slate-500">all</span>}</td>
                       <td className="px-4 py-3 text-slate-300">{e.term || '—'} <span className="text-xs text-slate-600">{e.currency || 'USD'}</span></td>
                       <td className="px-4 py-3 text-right text-slate-100">{fmtMoney(e.list_price_cents, e.currency ?? 'USD')}</td>
-                      <td className="px-4 py-3 text-right text-purple-300">{fmtMoney(e.per_seat_cents, e.currency ?? 'USD')}</td>
+                      <td className="px-4 py-3 text-right text-brand-300">{fmtMoney(e.per_seat_cents, e.currency ?? 'USD')}</td>
                       <td className="px-4 py-3 text-slate-400">
                         {e.seat_band_min != null || e.seat_band_max != null ? `${e.seat_band_min ?? 0}–${e.seat_band_max ?? '∞'}` : '—'}
                       </td>

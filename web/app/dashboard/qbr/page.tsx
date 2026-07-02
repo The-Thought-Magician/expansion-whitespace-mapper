@@ -227,7 +227,7 @@ export default function QbrPage() {
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
                   placeholder="Search account..."
-                  className="w-56 rounded-lg border border-slate-700 bg-slate-950 px-3 py-1.5 text-sm text-slate-200 placeholder:text-slate-600 focus:border-purple-500 focus:outline-none"
+                  className="w-56 rounded-lg border border-slate-700 bg-slate-950 px-3 py-1.5 text-sm text-slate-200 placeholder:text-slate-600 focus:border-brand-500 focus:outline-none"
                 />
               </div>
             </CardHeader>
@@ -270,7 +270,7 @@ export default function QbrPage() {
                               </div>
                             )}
                           </TD>
-                          <TD className="tabular-nums text-purple-300">
+                          <TD className="tabular-nums text-brand-300">
                             {arr != null ? fmtArr(arr) : '—'}
                           </TD>
                           <TD className="text-slate-400">{fmtDateTime(e.created_at)}</TD>
@@ -318,7 +318,7 @@ export default function QbrPage() {
             <select
               value={genAccountId}
               onChange={(e) => setGenAccountId(e.target.value)}
-              className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-200 focus:border-purple-500 focus:outline-none"
+              className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-200 focus:border-brand-500 focus:outline-none"
             >
               <option value="">Select an account…</option>
               {(accounts ?? []).map((a) => (
@@ -415,7 +415,7 @@ function QbrPayloadView({ payload }: { payload: any }) {
               {whitespace.map((w, i) => (
                 <TR key={i}>
                   <TD className="text-slate-200">{w.product_name ?? w.product_id ?? '—'}</TD>
-                  <TD className="text-right tabular-nums text-purple-300">
+                  <TD className="text-right tabular-nums text-brand-300">
                     {fmtArr(w.open_arr_cents)}
                   </TD>
                   <TD className="text-slate-400">{w.method ?? '—'}</TD>
@@ -444,7 +444,7 @@ function QbrPayloadView({ payload }: { payload: any }) {
                   <TD>
                     <Badge tone="blue">{p.stage ?? '—'}</Badge>
                   </TD>
-                  <TD className="text-right tabular-nums text-purple-300">
+                  <TD className="text-right tabular-nums text-brand-300">
                     {fmtArr(p.open_arr_cents)}
                   </TD>
                 </TR>
@@ -461,7 +461,7 @@ function QbrPayloadView({ payload }: { payload: any }) {
             {lookalikes.map((l, i) => (
               <li key={i} className="flex items-center justify-between gap-3 text-sm">
                 <span className="text-slate-300">{l.product_name ?? l.product_id ?? '—'}</span>
-                <span className="tabular-nums text-purple-300">{fmtArr(l.open_arr_cents)}</span>
+                <span className="tabular-nums text-brand-300">{fmtArr(l.open_arr_cents)}</span>
               </li>
             ))}
           </ul>

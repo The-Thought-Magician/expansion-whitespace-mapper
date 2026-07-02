@@ -168,7 +168,7 @@ export default function PlayDetailPage() {
   if (error || !play) {
     return (
       <div className="space-y-4">
-        <Link href="/dashboard/plays" className="text-sm text-purple-400 hover:text-purple-300">← Back to play queue</Link>
+        <Link href="/dashboard/plays" className="text-sm text-brand-400 hover:text-brand-300">← Back to play queue</Link>
         <EmptyState
           title="Play not found"
           description={error ?? 'This play may have been deleted.'}
@@ -182,7 +182,7 @@ export default function PlayDetailPage() {
     <div className="space-y-6">
       <div className="flex flex-wrap items-start justify-between gap-4">
         <div>
-          <Link href="/dashboard/plays" className="text-sm text-purple-400 hover:text-purple-300">← Play queue</Link>
+          <Link href="/dashboard/plays" className="text-sm text-brand-400 hover:text-brand-300">← Play queue</Link>
           <h1 className="mt-2 flex items-center gap-3 text-2xl font-bold text-white">
             {play.account_name ?? play.account_id}
             <Badge tone={STAGE_TONE[play.stage]}>{STAGE_LABELS[play.stage] ?? play.stage}</Badge>
@@ -220,8 +220,8 @@ export default function PlayDetailPage() {
                     disabled={busy || isCurrent}
                     className={`rounded-lg px-3 py-1.5 text-sm font-medium transition-colors ${
                       isCurrent
-                        ? 'bg-purple-600 text-white'
-                        : 'border border-slate-700 bg-slate-900 text-slate-300 hover:border-purple-500/50 hover:text-white disabled:opacity-50'
+                        ? 'bg-brand-600 text-white'
+                        : 'border border-slate-700 bg-slate-900 text-slate-300 hover:border-brand-500/50 hover:text-white disabled:opacity-50'
                     }`}
                   >
                     {STAGE_LABELS[s]}
@@ -249,7 +249,7 @@ export default function PlayDetailPage() {
                     type="number"
                     value={edit.open_arr_cents}
                     onChange={(e) => setEdit({ ...edit, open_arr_cents: e.target.value })}
-                    className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-200 focus:border-purple-500 focus:outline-none"
+                    className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-200 focus:border-brand-500 focus:outline-none"
                   />
                 </label>
                 <label className="block">
@@ -257,7 +257,7 @@ export default function PlayDetailPage() {
                   <input
                     value={edit.owner}
                     onChange={(e) => setEdit({ ...edit, owner: e.target.value })}
-                    className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-200 focus:border-purple-500 focus:outline-none"
+                    className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-200 focus:border-brand-500 focus:outline-none"
                   />
                 </label>
                 <label className="block">
@@ -266,7 +266,7 @@ export default function PlayDetailPage() {
                     type="date"
                     value={edit.due_date}
                     onChange={(e) => setEdit({ ...edit, due_date: e.target.value })}
-                    className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-200 focus:border-purple-500 focus:outline-none"
+                    className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-200 focus:border-brand-500 focus:outline-none"
                   />
                 </label>
               </div>
@@ -276,7 +276,7 @@ export default function PlayDetailPage() {
                   value={edit.notes}
                   onChange={(e) => setEdit({ ...edit, notes: e.target.value })}
                   rows={3}
-                  className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-200 focus:border-purple-500 focus:outline-none"
+                  className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-200 focus:border-brand-500 focus:outline-none"
                 />
               </label>
               <div className="flex justify-end gap-3">
@@ -305,7 +305,7 @@ export default function PlayDetailPage() {
               value={note}
               onChange={(e) => setNote(e.target.value)}
               placeholder="Log a note or update…"
-              className="flex-1 rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-200 placeholder:text-slate-600 focus:border-purple-500 focus:outline-none"
+              className="flex-1 rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-200 placeholder:text-slate-600 focus:border-brand-500 focus:outline-none"
             />
             <Button type="submit" disabled={busy || !note.trim()}>Add note</Button>
           </form>
@@ -316,7 +316,7 @@ export default function PlayDetailPage() {
             <ol className="relative space-y-4 border-l border-slate-800 pl-5">
               {activities.map((a) => (
                 <li key={a.id} className="relative">
-                  <span className="absolute -left-[1.42rem] top-1 h-2.5 w-2.5 rounded-full border-2 border-slate-950 bg-purple-500" />
+                  <span className="absolute -left-[1.42rem] top-1 h-2.5 w-2.5 rounded-full border-2 border-slate-950 bg-brand-500" />
                   <div className="flex flex-wrap items-center gap-2">
                     {a.activity_type === 'stage_change' || (a.from_stage || a.to_stage) ? (
                       <span className="text-sm text-slate-300">

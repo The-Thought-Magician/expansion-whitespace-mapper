@@ -226,7 +226,7 @@ export default function AccountsPage() {
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Name, external ID, or CSM..."
-              className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-white placeholder-slate-600 focus:border-purple-500 focus:outline-none"
+              className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-white placeholder-slate-600 focus:border-brand-500 focus:outline-none"
             />
           </div>
           <FilterSelect label="Segment" value={segment} onChange={setSegment} options={segments} />
@@ -266,7 +266,7 @@ export default function AccountsPage() {
             {visible.map((a) => (
               <TR key={a.id}>
                 <TD>
-                  <Link href={`/dashboard/accounts/${a.id}`} className="font-medium text-white hover:text-purple-300">
+                  <Link href={`/dashboard/accounts/${a.id}`} className="font-medium text-white hover:text-brand-300">
                     {a.name}
                   </Link>
                   {a.external_id && <div className="text-[11px] text-slate-500">{a.external_id}</div>}
@@ -402,7 +402,7 @@ function FilterSelect({
       <select
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-white focus:border-purple-500 focus:outline-none"
+        className="rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-white focus:border-brand-500 focus:outline-none"
       >
         <option value="">All</option>
         {options.map((o) => (
@@ -436,7 +436,7 @@ function Field({
         value={value}
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
-        className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-white placeholder-slate-600 focus:border-purple-500 focus:outline-none"
+        className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-white placeholder-slate-600 focus:border-brand-500 focus:outline-none"
       />
     </div>
   )

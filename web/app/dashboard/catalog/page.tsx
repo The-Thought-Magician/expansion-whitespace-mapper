@@ -55,7 +55,7 @@ function fmtUsd(cents?: number | null): string {
 }
 
 const inputCls =
-  'w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-100 outline-none focus:border-purple-500'
+  'w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-100 outline-none focus:border-brand-500'
 
 export default function CatalogPage() {
   const [products, setProducts] = useState<Product[]>([])
@@ -297,7 +297,7 @@ export default function CatalogPage() {
           <div className="flex flex-wrap items-center gap-2">
             <input
               placeholder="Search name / SKU…"
-              className="w-48 rounded-lg border border-slate-700 bg-slate-950 px-3 py-1.5 text-sm text-slate-100 outline-none focus:border-purple-500"
+              className="w-48 rounded-lg border border-slate-700 bg-slate-950 px-3 py-1.5 text-sm text-slate-100 outline-none focus:border-brand-500"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
             />
@@ -320,8 +320,8 @@ export default function CatalogPage() {
             </select>
           </div>
           <div className="flex rounded-lg border border-slate-700 p-0.5 text-xs">
-            <button onClick={() => setView('table')} className={`rounded-md px-3 py-1 ${view === 'table' ? 'bg-purple-600 text-white' : 'text-slate-400'}`}>Table</button>
-            <button onClick={() => setView('hierarchy')} className={`rounded-md px-3 py-1 ${view === 'hierarchy' ? 'bg-purple-600 text-white' : 'text-slate-400'}`}>Hierarchy</button>
+            <button onClick={() => setView('table')} className={`rounded-md px-3 py-1 ${view === 'table' ? 'bg-brand-600 text-white' : 'text-slate-400'}`}>Table</button>
+            <button onClick={() => setView('hierarchy')} className={`rounded-md px-3 py-1 ${view === 'hierarchy' ? 'bg-brand-600 text-white' : 'text-slate-400'}`}>Hierarchy</button>
           </div>
         </CardHeader>
         <CardBody className="p-0">
@@ -352,7 +352,7 @@ export default function CatalogPage() {
                   {filtered.map((p) => (
                     <tr key={p.id} className="hover:bg-slate-900/40">
                       <td className="px-4 py-3">
-                        <button onClick={() => openDetail(p)} className="text-left font-medium text-slate-100 hover:text-purple-300">
+                        <button onClick={() => openDetail(p)} className="text-left font-medium text-slate-100 hover:text-brand-300">
                           {p.name}
                         </button>
                         {p.parent_product_id && <div className="text-xs text-slate-500">module</div>}
@@ -361,7 +361,7 @@ export default function CatalogPage() {
                       <td className="px-4 py-3 text-slate-300">{p.family || '—'}</td>
                       <td className="px-4 py-3 text-slate-300">{p.category || '—'}</td>
                       <td className="px-4 py-3 text-slate-400">{p.product_type || '—'}</td>
-                      <td className="px-4 py-3 text-right text-purple-300">{fmtUsd(p.default_expansion_arr_cents)}</td>
+                      <td className="px-4 py-3 text-right text-brand-300">{fmtUsd(p.default_expansion_arr_cents)}</td>
                       <td className="px-4 py-3">
                         {p.is_active ? <Badge tone="green">active</Badge> : <Badge tone="slate">retired</Badge>}
                       </td>
@@ -384,13 +384,13 @@ export default function CatalogPage() {
                   <div key={root.id} className="rounded-lg border border-slate-800 bg-slate-950/40">
                     <div className="flex items-center justify-between px-4 py-3">
                       <div className="flex items-center gap-3">
-                        <button onClick={() => openDetail(root)} className="font-medium text-slate-100 hover:text-purple-300">{root.name}</button>
+                        <button onClick={() => openDetail(root)} className="font-medium text-slate-100 hover:text-brand-300">{root.name}</button>
                         <span className="font-mono text-xs text-slate-500">{root.sku_code}</span>
                         {root.family && <Badge tone="blue">{root.family}</Badge>}
                         {!root.is_active && <Badge tone="slate">retired</Badge>}
                       </div>
                       <div className="flex items-center gap-3">
-                        <span className="text-sm text-purple-300">{fmtUsd(root.default_expansion_arr_cents)}</span>
+                        <span className="text-sm text-brand-300">{fmtUsd(root.default_expansion_arr_cents)}</span>
                         <Button size="sm" variant="ghost" onClick={() => openEdit(root)}>Edit</Button>
                       </div>
                     </div>
@@ -400,10 +400,10 @@ export default function CatalogPage() {
                           <div key={c.id} className="flex items-center justify-between rounded-md px-3 py-1.5 hover:bg-slate-900/60">
                             <div className="flex items-center gap-2">
                               <span className="text-slate-600">↳</span>
-                              <button onClick={() => openDetail(c)} className="text-sm text-slate-200 hover:text-purple-300">{c.name}</button>
+                              <button onClick={() => openDetail(c)} className="text-sm text-slate-200 hover:text-brand-300">{c.name}</button>
                               <span className="font-mono text-xs text-slate-500">{c.sku_code}</span>
                             </div>
-                            <span className="text-xs text-purple-300">{fmtUsd(c.default_expansion_arr_cents)}</span>
+                            <span className="text-xs text-brand-300">{fmtUsd(c.default_expansion_arr_cents)}</span>
                           </div>
                         ))}
                       </div>
@@ -506,7 +506,7 @@ export default function CatalogPage() {
                   {detail.modules.map((m) => (
                     <div key={m.id} className="flex items-center justify-between rounded-md bg-slate-950/60 px-3 py-1.5 text-sm">
                       <span className="text-slate-200">{m.name}</span>
-                      <span className="text-xs text-purple-300">{fmtUsd(m.default_expansion_arr_cents)}</span>
+                      <span className="text-xs text-brand-300">{fmtUsd(m.default_expansion_arr_cents)}</span>
                     </div>
                   ))}
                 </div>
@@ -538,7 +538,7 @@ export default function CatalogPage() {
         <div className="space-y-3">
           <p className="text-sm text-slate-400">Paste a JSON array of product rows (sku_code, name, family, category, product_type, default_expansion_arr_cents).</p>
           <textarea
-            className="h-48 w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 font-mono text-xs text-slate-100 outline-none focus:border-purple-500"
+            className="h-48 w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 font-mono text-xs text-slate-100 outline-none focus:border-brand-500"
             placeholder='[{"sku_code":"CORE","name":"Core Platform"}]'
             value={importText}
             onChange={(e) => setImportText(e.target.value)}

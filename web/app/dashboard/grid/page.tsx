@@ -37,7 +37,7 @@ type SavedView = { id: string; name: string; surface: string; filters: Record<st
 
 const STATE_STYLE: Record<string, { bg: string; label: string; tone: 'green' | 'purple' | 'slate' | 'red' }> = {
   owned: { bg: 'bg-emerald-500/25 hover:bg-emerald-500/40 text-emerald-200', label: 'Owned', tone: 'green' },
-  eligible: { bg: 'bg-purple-500/25 hover:bg-purple-500/45 text-purple-200', label: 'Whitespace', tone: 'purple' },
+  eligible: { bg: 'bg-brand-500/25 hover:bg-brand-500/45 text-brand-200', label: 'Whitespace', tone: 'purple' },
   ineligible: { bg: 'bg-slate-800/60 hover:bg-slate-800 text-slate-500', label: 'Ineligible', tone: 'slate' },
   unknown: { bg: 'bg-slate-900 hover:bg-slate-800 text-slate-600', label: 'Unknown', tone: 'slate' },
 }
@@ -262,7 +262,7 @@ export default function GridPage() {
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
             <div className="rounded-xl border border-slate-800 bg-slate-900/60 px-4 py-3">
               <div className="text-xs uppercase tracking-wide text-slate-500">Open whitespace</div>
-              <div className="mt-1 text-xl font-bold text-purple-300">{fmtMoney(openWhitespaceTotal)}</div>
+              <div className="mt-1 text-xl font-bold text-brand-300">{fmtMoney(openWhitespaceTotal)}</div>
             </div>
             <div className="rounded-xl border border-slate-800 bg-slate-900/60 px-4 py-3">
               <div className="text-xs uppercase tracking-wide text-slate-500">Open cells</div>
@@ -285,7 +285,7 @@ export default function GridPage() {
                 <button
                   key={v.id}
                   onClick={() => applyView(v)}
-                  className="rounded-full border border-slate-700 bg-slate-800/60 px-3 py-1 text-xs text-slate-300 hover:border-purple-500/40 hover:text-purple-200"
+                  className="rounded-full border border-slate-700 bg-slate-800/60 px-3 py-1 text-xs text-slate-300 hover:border-brand-500/40 hover:text-brand-200"
                 >
                   {v.name}
                 </button>
@@ -301,7 +301,7 @@ export default function GridPage() {
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
                   placeholder="Account name..."
-                  className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-white placeholder-slate-600 focus:border-purple-500 focus:outline-none"
+                  className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-white placeholder-slate-600 focus:border-brand-500 focus:outline-none"
                 />
               </div>
               <div>
@@ -309,7 +309,7 @@ export default function GridPage() {
                 <select
                   value={segment}
                   onChange={(e) => setSegment(e.target.value)}
-                  className="rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-white focus:border-purple-500 focus:outline-none"
+                  className="rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-white focus:border-brand-500 focus:outline-none"
                 >
                   <option value="">All</option>
                   {segments.map((s) => (
@@ -324,7 +324,7 @@ export default function GridPage() {
                 <select
                   value={csm}
                   onChange={(e) => setCsm(e.target.value)}
-                  className="rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-white focus:border-purple-500 focus:outline-none"
+                  className="rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-white focus:border-brand-500 focus:outline-none"
                 >
                   <option value="">All</option>
                   {csms.map((c) => (
@@ -339,7 +339,7 @@ export default function GridPage() {
                 <select
                   value={stateFilter}
                   onChange={(e) => setStateFilter(e.target.value)}
-                  className="rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-white focus:border-purple-500 focus:outline-none"
+                  className="rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-white focus:border-brand-500 focus:outline-none"
                 >
                   <option value="">Any</option>
                   <option value="owned">Owned</option>
@@ -358,7 +358,7 @@ export default function GridPage() {
               <span className="inline-block h-3 w-3 rounded bg-emerald-500/40" /> Owned
             </span>
             <span className="flex items-center gap-1.5">
-              <span className="inline-block h-3 w-3 rounded bg-purple-500/40" /> Whitespace (eligible)
+              <span className="inline-block h-3 w-3 rounded bg-brand-500/40" /> Whitespace (eligible)
             </span>
             <span className="flex items-center gap-1.5">
               <span className="inline-block h-3 w-3 rounded bg-slate-700" /> Ineligible
@@ -458,7 +458,7 @@ export default function GridPage() {
             {drillDetail?.sized && (
               <div className="rounded-lg border border-slate-800 bg-slate-950/60 p-3">
                 <div className="text-xs uppercase tracking-wide text-slate-500">Sizing</div>
-                <div className="mt-1 text-2xl font-bold text-purple-300">
+                <div className="mt-1 text-2xl font-bold text-brand-300">
                   {fmtMoney(drillDetail.sized.open_arr_cents)}
                 </div>
                 <div className="mt-1 flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-400">
@@ -507,7 +507,7 @@ export default function GridPage() {
               value={viewName}
               onChange={(e) => setViewName(e.target.value)}
               placeholder="e.g. Enterprise cross-sell"
-              className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-white placeholder-slate-600 focus:border-purple-500 focus:outline-none"
+              className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-white placeholder-slate-600 focus:border-brand-500 focus:outline-none"
             />
           </div>
         </div>
@@ -547,7 +547,7 @@ export default function GridPage() {
             <select
               value={bulkType}
               onChange={(e) => setBulkType(e.target.value)}
-              className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-white focus:border-purple-500 focus:outline-none"
+              className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-white focus:border-brand-500 focus:outline-none"
             >
               <option value="cross_sell">Cross-sell</option>
               <option value="upsell">Upsell</option>
@@ -562,7 +562,7 @@ export default function GridPage() {
                 value={bulkOwner}
                 onChange={(e) => setBulkOwner(e.target.value)}
                 placeholder="CSM name"
-                className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-white placeholder-slate-600 focus:border-purple-500 focus:outline-none"
+                className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-white placeholder-slate-600 focus:border-brand-500 focus:outline-none"
               />
             </div>
             <div>
@@ -572,7 +572,7 @@ export default function GridPage() {
                 value={bulkMinArr}
                 onChange={(e) => setBulkMinArr(e.target.value)}
                 placeholder="0"
-                className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-white placeholder-slate-600 focus:border-purple-500 focus:outline-none"
+                className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-white placeholder-slate-600 focus:border-brand-500 focus:outline-none"
               />
             </div>
           </div>

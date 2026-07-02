@@ -316,7 +316,7 @@ export default function AccountDetailPage() {
       {/* Header */}
       <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
         <div>
-          <Link href="/dashboard/accounts" className="text-xs font-medium text-slate-500 hover:text-purple-300">
+          <Link href="/dashboard/accounts" className="text-xs font-medium text-slate-500 hover:text-brand-300">
             ← Accounts
           </Link>
           <div className="mt-2 flex flex-wrap items-center gap-3">
@@ -402,10 +402,10 @@ export default function AccountDetailPage() {
                         <TD>
                           <div className="font-medium text-slate-100">{w.product_name || w.name || w.product_id}</div>
                           <div className="mt-1 h-1.5 w-32 overflow-hidden rounded-full bg-slate-800">
-                            <div className="h-full rounded-full bg-purple-500" style={{ width: `${pct}%` }} />
+                            <div className="h-full rounded-full bg-brand-500" style={{ width: `${pct}%` }} />
                           </div>
                         </TD>
-                        <TD className="text-right font-semibold text-purple-300">{fmtUsd(w.open_arr_cents)}</TD>
+                        <TD className="text-right font-semibold text-brand-300">{fmtUsd(w.open_arr_cents)}</TD>
                         <TD className="text-right text-xs text-slate-500">
                           {fmtUsd(w.low_arr_cents)} – {fmtUsd(w.high_arr_cents)}
                         </TD>
@@ -538,7 +538,7 @@ export default function AccountDetailPage() {
                       </TD>
                       <TD className="text-right text-slate-300">{fmtPct(l.adoption_rate)}</TD>
                       <TD className="text-right text-slate-400">{l.peer_count ?? '—'}</TD>
-                      <TD className="text-right text-purple-300">{fmtUsd(l.open_arr_cents)}</TD>
+                      <TD className="text-right text-brand-300">{fmtUsd(l.open_arr_cents)}</TD>
                       <TD className="text-right text-slate-300">{l.score != null ? l.score.toFixed(2) : '—'}</TD>
                       <TD className="text-right">
                         <Button size="sm" variant="ghost" onClick={() => openPlay(l.product_id, l.open_arr_cents, 'cross-sell')}>
@@ -585,7 +585,7 @@ export default function AccountDetailPage() {
                       <Badge tone={p.stage === 'won' ? 'green' : p.stage === 'lost' ? 'red' : 'blue'}>{p.stage || '—'}</Badge>
                     </TD>
                     <TD className="text-slate-400">{p.owner || '—'}</TD>
-                    <TD className="text-right text-purple-300">{fmtUsd(p.open_arr_cents)}</TD>
+                    <TD className="text-right text-brand-300">{fmtUsd(p.open_arr_cents)}</TD>
                     <TD className="text-slate-400">{p.due_date ? new Date(p.due_date).toLocaleDateString() : '—'}</TD>
                   </TR>
                 ))}
@@ -725,7 +725,7 @@ export default function AccountDetailPage() {
 }
 
 const inputCls =
-  'w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-100 outline-none focus:border-purple-500'
+  'w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-100 outline-none focus:border-brand-500'
 
 function Field({ label, children, className = '' }: { label: string; children: React.ReactNode; className?: string }) {
   return (
@@ -768,7 +768,7 @@ function QbrView({ payload, account, fmtUsd }: { payload: any; account: Account;
             {topWhitespace.slice(0, 8).map((w: any, i: number) => (
               <div key={i} className="flex items-center justify-between rounded-md bg-slate-950/60 px-3 py-1.5 text-sm">
                 <span className="text-slate-200">{w.product_name || w.name || w.product_id || `Product ${i + 1}`}</span>
-                <span className="font-medium text-purple-300">{fmtUsd(w.open_arr_cents)}</span>
+                <span className="font-medium text-brand-300">{fmtUsd(w.open_arr_cents)}</span>
               </div>
             ))}
           </div>

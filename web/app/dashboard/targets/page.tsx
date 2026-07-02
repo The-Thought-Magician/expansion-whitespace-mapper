@@ -219,13 +219,13 @@ export default function TargetsPage() {
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search scope or period…"
-              className="w-56 rounded-lg border border-slate-700 bg-slate-950 px-3 py-1.5 text-sm text-slate-200 placeholder:text-slate-600 focus:border-purple-500 focus:outline-none"
+              className="w-56 rounded-lg border border-slate-700 bg-slate-950 px-3 py-1.5 text-sm text-slate-200 placeholder:text-slate-600 focus:border-brand-500 focus:outline-none"
             />
             <div className="flex flex-wrap gap-1">
               <button
                 onClick={() => setScopeFilter('all')}
                 className={`rounded-lg px-2.5 py-1.5 text-xs font-medium ${
-                  scopeFilter === 'all' ? 'bg-purple-600 text-white' : 'bg-slate-800 text-slate-400 hover:text-slate-200'
+                  scopeFilter === 'all' ? 'bg-brand-600 text-white' : 'bg-slate-800 text-slate-400 hover:text-slate-200'
                 }`}
               >
                 All
@@ -235,7 +235,7 @@ export default function TargetsPage() {
                   key={st}
                   onClick={() => setScopeFilter(st)}
                   className={`rounded-lg px-2.5 py-1.5 text-xs font-medium capitalize ${
-                    scopeFilter === st ? 'bg-purple-600 text-white' : 'bg-slate-800 text-slate-400 hover:text-slate-200'
+                    scopeFilter === st ? 'bg-brand-600 text-white' : 'bg-slate-800 text-slate-400 hover:text-slate-200'
                   }`}
                 >
                   {st}
@@ -325,7 +325,7 @@ export default function TargetsPage() {
             <select
               value={form.scope_type}
               onChange={(e) => setForm({ ...form, scope_type: e.target.value })}
-              className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-200 capitalize focus:border-purple-500 focus:outline-none"
+              className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-200 capitalize focus:border-brand-500 focus:outline-none"
             >
               {SCOPE_TYPES.map((st) => (
                 <option key={st} value={st} className="capitalize">{st}</option>
@@ -393,7 +393,7 @@ function Field({
         required={required}
         placeholder={placeholder}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-200 placeholder:text-slate-600 focus:border-purple-500 focus:outline-none"
+        className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-200 placeholder:text-slate-600 focus:border-brand-500 focus:outline-none"
       />
     </label>
   )

@@ -213,12 +213,12 @@ export default function PlaysPage() {
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search account, product, type…"
-              className="w-64 rounded-lg border border-slate-700 bg-slate-950 px-3 py-1.5 text-sm text-slate-200 placeholder:text-slate-600 focus:border-purple-500 focus:outline-none"
+              className="w-64 rounded-lg border border-slate-700 bg-slate-950 px-3 py-1.5 text-sm text-slate-200 placeholder:text-slate-600 focus:border-brand-500 focus:outline-none"
             />
             <select
               value={ownerFilter}
               onChange={(e) => setOwnerFilter(e.target.value)}
-              className="rounded-lg border border-slate-700 bg-slate-950 px-3 py-1.5 text-sm text-slate-200 focus:border-purple-500 focus:outline-none"
+              className="rounded-lg border border-slate-700 bg-slate-950 px-3 py-1.5 text-sm text-slate-200 focus:border-brand-500 focus:outline-none"
             >
               <option value="">All owners</option>
               {owners.map((o) => (
@@ -232,7 +232,7 @@ export default function PlaysPage() {
                 key={v}
                 onClick={() => setView(v)}
                 className={`rounded-md px-3 py-1 text-xs font-medium capitalize ${
-                  view === v ? 'bg-purple-600 text-white' : 'text-slate-400 hover:text-slate-200'
+                  view === v ? 'bg-brand-600 text-white' : 'text-slate-400 hover:text-slate-200'
                 }`}
               >
                 {v}
@@ -268,9 +268,9 @@ export default function PlaysPage() {
                         <p className="px-1 py-4 text-center text-xs text-slate-600">Empty</p>
                       ) : (
                         col.map((p) => (
-                          <div key={p.id} className="rounded-lg border border-slate-800 bg-slate-900 p-3 hover:border-purple-500/40">
+                          <div key={p.id} className="rounded-lg border border-slate-800 bg-slate-900 p-3 hover:border-brand-500/40">
                             <Link href={`/dashboard/plays/${p.id}`} className="block">
-                              <div className="text-sm font-medium text-white hover:text-purple-300">{p.account_name ?? p.account_id}</div>
+                              <div className="text-sm font-medium text-white hover:text-brand-300">{p.account_name ?? p.account_id}</div>
                               <div className="mt-0.5 text-xs text-slate-400">{p.product_name ?? p.product_id}</div>
                             </Link>
                             <div className="mt-2 flex items-center justify-between">
@@ -283,7 +283,7 @@ export default function PlaysPage() {
                                 value={p.stage}
                                 disabled={busyId === p.id}
                                 onChange={(e) => transition(p, e.target.value as Stage)}
-                                className="flex-1 rounded border border-slate-700 bg-slate-950 px-1.5 py-1 text-[11px] text-slate-300 focus:border-purple-500 focus:outline-none"
+                                className="flex-1 rounded border border-slate-700 bg-slate-950 px-1.5 py-1 text-[11px] text-slate-300 focus:border-brand-500 focus:outline-none"
                               >
                                 {STAGES.map((s) => (
                                   <option key={s} value={s}>{STAGE_LABELS[s]}</option>
@@ -326,7 +326,7 @@ export default function PlaysPage() {
                 {filtered.map((p) => (
                   <TR key={p.id}>
                     <TD className="font-medium text-white">
-                      <Link href={`/dashboard/plays/${p.id}`} className="hover:text-purple-300">{p.account_name ?? p.account_id}</Link>
+                      <Link href={`/dashboard/plays/${p.id}`} className="hover:text-brand-300">{p.account_name ?? p.account_id}</Link>
                     </TD>
                     <TD className="text-slate-300">{p.product_name ?? p.product_id}</TD>
                     <TD className="text-xs uppercase tracking-wide text-slate-400">{p.play_type.replace(/_/g, ' ')}</TD>
@@ -336,7 +336,7 @@ export default function PlaysPage() {
                         value={p.stage}
                         disabled={busyId === p.id}
                         onChange={(e) => transition(p, e.target.value as Stage)}
-                        className="rounded border border-slate-700 bg-slate-950 px-2 py-1 text-xs text-slate-300 focus:border-purple-500 focus:outline-none"
+                        className="rounded border border-slate-700 bg-slate-950 px-2 py-1 text-xs text-slate-300 focus:border-brand-500 focus:outline-none"
                       >
                         {STAGES.map((s) => (
                           <option key={s} value={s}>{STAGE_LABELS[s]}</option>
@@ -386,7 +386,7 @@ export default function PlaysPage() {
               <select
                 value={form.play_type}
                 onChange={(e) => setForm({ ...form, play_type: e.target.value })}
-                className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-200 focus:border-purple-500 focus:outline-none"
+                className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-200 focus:border-brand-500 focus:outline-none"
               >
                 {PLAY_TYPES.map((t) => (
                   <option key={t} value={t}>{t.replace(/_/g, ' ')}</option>
@@ -405,7 +405,7 @@ export default function PlaysPage() {
               value={form.notes}
               onChange={(e) => setForm({ ...form, notes: e.target.value })}
               rows={3}
-              className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-200 focus:border-purple-500 focus:outline-none"
+              className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-200 focus:border-brand-500 focus:outline-none"
             />
           </label>
         </form>
@@ -435,7 +435,7 @@ function Field({
         value={value}
         required={required}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-200 focus:border-purple-500 focus:outline-none"
+        className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-200 focus:border-brand-500 focus:outline-none"
       />
     </label>
   )

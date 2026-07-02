@@ -294,7 +294,7 @@ export default function SettingsPage() {
               <select
                 value={form.default_currency ?? 'USD'}
                 onChange={(e) => setForm({ ...form, default_currency: e.target.value })}
-                className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-200 focus:border-purple-500 focus:outline-none"
+                className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-200 focus:border-brand-500 focus:outline-none"
               >
                 {CURRENCIES.map((c) => (
                   <option key={c} value={c}>
@@ -310,7 +310,7 @@ export default function SettingsPage() {
               <select
                 value={form.default_sizing_method ?? 'list_price'}
                 onChange={(e) => setForm({ ...form, default_sizing_method: e.target.value })}
-                className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-200 focus:border-purple-500 focus:outline-none"
+                className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-200 focus:border-brand-500 focus:outline-none"
               >
                 {SIZING_METHODS.map((m) => (
                   <option key={m} value={m}>
@@ -326,7 +326,7 @@ export default function SettingsPage() {
               <select
                 value={form.default_term ?? 'annual'}
                 onChange={(e) => setForm({ ...form, default_term: e.target.value })}
-                className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-200 focus:border-purple-500 focus:outline-none"
+                className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-200 focus:border-brand-500 focus:outline-none"
               >
                 {TERMS.map((t) => (
                   <option key={t} value={t}>
@@ -469,7 +469,7 @@ export default function SettingsPage() {
                 setAuditEntity(e.target.value)
                 reloadAudit(e.target.value)
               }}
-              className="rounded-lg border border-slate-700 bg-slate-950 px-3 py-1.5 text-sm text-slate-200 focus:border-purple-500 focus:outline-none"
+              className="rounded-lg border border-slate-700 bg-slate-950 px-3 py-1.5 text-sm text-slate-200 focus:border-brand-500 focus:outline-none"
             >
               <option value="">All entities</option>
               {auditEntities.map((en) => (

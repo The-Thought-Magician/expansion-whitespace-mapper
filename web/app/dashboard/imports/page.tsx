@@ -182,7 +182,7 @@ export default function ImportsPage() {
                 key={v}
                 onClick={() => setStatusFilter(v)}
                 className={`rounded-lg px-2.5 py-1.5 text-xs font-medium ${
-                  statusFilter === v ? 'bg-purple-600 text-white' : 'bg-slate-800 text-slate-400 hover:text-slate-200'
+                  statusFilter === v ? 'bg-brand-600 text-white' : 'bg-slate-800 text-slate-400 hover:text-slate-200'
                 }`}
               >
                 {l}
@@ -250,7 +250,7 @@ export default function ImportsPage() {
             <select
               value={entity}
               onChange={(e) => setEntity(e.target.value)}
-              className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-200 focus:border-purple-500 focus:outline-none"
+              className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-200 focus:border-brand-500 focus:outline-none"
             >
               {ENTITIES.map((e) => (
                 <option key={e.value} value={e.value}>{e.label}</option>
@@ -262,7 +262,7 @@ export default function ImportsPage() {
             <span className="text-xs font-medium text-slate-400">Expected columns</span>
             <div className="mt-1.5 flex flex-wrap gap-1.5">
               {spec.columns.map((c) => (
-                <code key={c} className="rounded bg-slate-800 px-1.5 py-0.5 text-xs text-purple-300">{c}</code>
+                <code key={c} className="rounded bg-slate-800 px-1.5 py-0.5 text-xs text-brand-300">{c}</code>
               ))}
             </div>
           </div>
@@ -274,7 +274,7 @@ export default function ImportsPage() {
               onChange={(e) => setCsv(e.target.value)}
               rows={9}
               placeholder={`${spec.columns.join(',')}\n${spec.columns.map((c) => spec.numeric.includes(c) ? '0' : `sample-${c}`).join(',')}`}
-              className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 font-mono text-xs text-slate-200 placeholder:text-slate-600 focus:border-purple-500 focus:outline-none"
+              className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 font-mono text-xs text-slate-200 placeholder:text-slate-600 focus:border-brand-500 focus:outline-none"
             />
           </label>
 
